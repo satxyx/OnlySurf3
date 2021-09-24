@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>OnlySurf | Find A Beach</title>
+    <link rel="stylesheet/less" type="text/css" href="../css/style.less" />
+    <script src="https://cdn.jsdelivr.net/npm/less@4.1.1"></script>
+
+    <link rel="stylesheet" href="../css/main.css">
+
+
+</head>
+
+<body>
+    <%- include('../../partials/navbar2.ejs') %>
+
+
+
+        <head>
+        </head>
+
+
+        <div class="signup-form-wrapper">
+            <form method="POST" action="/beach" class="signup-form">
+                <h1>find your beach</h1>
+
+                <section>
+                    <p>drop a pin below to find accurate surf and weather data for any geolocation in the world!</p>
+                    <div id='map_canvas'></div>
+                </section>
+
+                <div class=input-field>
+                    <br>
+                    <input type="text" name="name" id="name" class="input" placeholder="name your beach..." />
+                </div>
+                <br>
+                <div class=input-field>
+                    <input type="text" name="lat" id="mytextagain" class="input" placeholder="latitude..." />
+                </div>
+                <br>
+                <div class=input-field>
+                    <input type="text" name="lang" id="mytext" class="input" placeholder="longitude..." />
+                </div>
+                <br>
+                <div class=input-field>
+                    <input type="text" name="content" class="input" placeholder="write some notes..."></textarea>
+                </div>
+                <br>
+                <input type="submit" value="catch waves" class="button-new" />
+            </form>
+        </div>
+        </div>
+
+
+
+        <script type="text/javascript"
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCasBjJh8EgI1ZIGdpZNS7888WvM8DVcdo"></script>
+        <script>
+
+            var map = new google.maps.Map(document.getElementById('map_canvas'), {
+                zoom: 10,
+                center: new google.maps.LatLng(21.664866, -158.052961),
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            });
+
+            var myMarker = new google.maps.Marker({
+                position: new google.maps.LatLng(21.664866, -158.052961),
+                draggable: true
+            });
+
+            google.maps.event.addListener(myMarker, 'dragend', function (evt) {
+                document.getElementById("mytext").value = evt.latLng.lng().toFixed(3);
+                document.getElementById("mytextagain").value = evt.latLng.lat().toFixed(3);
+
+            });
+
+            google.maps.event.addListener(myMarker, 'dragstart', function (evt) {
+                document.getElementById('current').innerHTML = '<p>Currently dragging marker...</p>';
+            });
+
+            map.setCenter(myMarker.position);
+            myMarker.setMap(map);
+        </script>
+
+        <script type="text/javascript">
+
+            function GetLocation() {
+                var geocoder = new google.maps.Geocoder();
+                var address = document.getElementById("txtAddress").value;
+                geocoder.geocode({ 'address': address }, function (results, status) {
+                    if (status == google.maps.GeocoderStatus.OK) {
+                        var latitude = results[0].geometry.location.lat();
+                        var longitude = results[0].geometry.location.lng();
+                        document.getElementById("mytext").value = longitude;
+                        document.getElementById("mytextagain").value = latitude;
+                        document.getElementById("name").value = address;
+                    } else {
+                        alert("Request failed.")
+                    }
+                });
+            };
+
+        </script>
+
+</body>
+
+</html>

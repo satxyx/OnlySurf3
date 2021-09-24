@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0"></head>
+
+<!-- NOT SHOWING ON LIFE SITE -->
+
+<body>
+    <%- include('../../partials/navbar.ejs') %>
+    <header id= "profile-greeting">
+        <h1>having second thoughts...?</h1>
+    </header>
+    <div id = "content-wrapper">
+        <form method="POST" action="/beach/<%= oneBeach._id %>?_method=PUT">
+            <label for="title">name</label>
+            <br>
+            <input type="text" name="name" id="name" value="<%= oneBeach.name %>"/>
+            <br>
+            <label for="content">content</label>
+            <br>
+            <textarea name="content" id="summernote"><%- oneBeach.content %></textarea>
+            <br>
+            <label for="location">location</label>
+            <br>
+            <input type="text" name="location" id="location"/>
+            <br>
+            <label for="lat">lat</label>
+            <br>
+            <input type="text" name="lat" id="lat"/>
+            <br>
+            <label for="lang">lang</label>
+            <br>
+            <input type="text" name="lang" id="lang"/>
+    </div>
+    <footer id = "footer-wrapper">
+    </footer>
+    <div id = "submit-button">
+        <input type = "submit" value ="Update"/>
+    </div>
+    </form>
+</body>
+</html>

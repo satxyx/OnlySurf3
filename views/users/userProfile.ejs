@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OnlySurf</title>
+
+    <!-- NOT SHOWING ON LIFE SITE -->
+
+    <link rel="stylesheet" href="/css/profile2.css">
+    <link rel="stylesheet" href="/css/nav.css">
+
+</head>
+
+<body>
+    <%- include('../../partials/navbar.ejs') %>
+
+        <div class="signup-form-wrapper">
+            <div class="form-image">
+            </div>
+            <div class="signup-form">
+
+                <h1 class="title">welcome, <%=singleUser.firstName%>
+                </h1>
+                <p>
+                    here is your profile!
+                </p>
+
+                <div class="input-field">
+                    <img class="avatar-image" src="<%= singleUser.avatarImage %>" alt="Avatar Image">
+                </div>
+
+                <div class=input-field>
+                    <input class="input" placeholder="username: <%= singleUser.userName %>" />
+                </div>
+                <br><br>
+
+                <div class=input-field>
+                    <input class="input" placeholder="first name: <%= singleUser.firstName %>" />
+                </div>
+                <br><br>
+                <div class=input-field>
+                    <input class="input" placeholder="password: <%= singleUser.password %>" />
+                </div>
+                <br>
+                <div class="action">
+                    <button class="button" id=btn-sign-up>
+                        <a class="a-button" href="/user/<%= singleUser._id %>/edit">
+                            update profile</a>
+                    </button>
+                </div>
+            </div>
+</body>
+
+</html>

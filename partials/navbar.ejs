@@ -1,0 +1,27 @@
+<body>
+	<div class="header">
+		<a class="active logo" href="/">OnlySurf</a>
+	</div>
+	<nav role='navigation'>
+		<div id="menuToggle">
+			<input type="checkbox" />
+			<span></span>
+			<span></span>
+			<span></span>
+			<ul id="menu">
+				<a href="/user/<%=oneUser%>">
+					<li class="menu-text">welcome</li>
+				</a>
+				<a class="menu-text" href="/beach">
+					<li class="menu-text">beaches</li>
+				</a>
+				<a href="/user/profile/<%=oneUser%>">
+					<li class="menu-text">settings</li>
+				</a>
+				<a class="menu-text" href="/logout">
+					<li class="menu-text">log out</li>
+				</a>
+			</ul>
+		</div>
+	</nav>
+</body>

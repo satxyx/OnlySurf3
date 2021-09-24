@@ -1,0 +1,149 @@
+@font-face {
+    font-family: 'berganteregular';
+    src: url('../fonts/bergante-webfont.woff2') format('woff2')
+  }
+  
+  @import url('https://fonts.googleapis.com/css2?family=Karla:wght@200&display=swap');
+
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@200&300&400&family=Vidaloka&display=swap');
+
+  * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  --primary: white;
+  --blue: #407f99;
+}
+
+p {
+    color:white;
+    font-family: "Roboto", sans-serif;
+font-weight:lighter;
+font-size:14px;
+-webkit-font-smoothing: antialiased;
+
+}
+
+h1 {
+  color:white;
+  font-family: "berganteregular";
+  color: var(--primary);
+  font-weight:lighter;
+  -webkit-font-smoothing: antialiased;
+}
+
+ul {
+  list-style: none;
+}
+
+#video-bg {
+  position: fixed;
+  z-index: -1;
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0, 0, 0, 0.434) 100%);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(107, 52, 52, 0.8) 0%,rgba(0,0,0,.9) 80%);
+
+}
+
+.hero {
+  position: absolute;
+  top: 50%;
+  left: 12%;
+  transform: translateY(-30%);
+  z-index: 10;
+}
+.hero > * {
+  transform: translateY(80px);
+  opacity: 0;
+  animation: fadeUp 1s ease-out forwards;
+}
+.hero h1 {
+  font-size: 5rem;
+}
+.hero p {
+  font-size: 1.2rem;
+  margin: 2em 0 2em 0;
+  line-height: 30px;
+}
+
+.hero button {
+  padding: 1em 1.2em;
+  background-color: #407f99;
+  font-family: 'Raleway';
+  font-size: 0.8rem;
+  font-weight: light;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-weight: lighter;
+  border: 2px solid white;
+  box-shadow: rgba(160, 160, 160, 0.3) -4px 9px 25px -6px;
+
+}
+.hero button:hover {
+  background-color: #407f99;
+  border: 2px solid #407f99;
+}
+
+.hero h1:nth-child(2) {
+  animation-delay: 0.3s;
+}
+.hero h1:nth-child(3) {
+  animation-delay: 0.6s;
+}
+.hero h1:nth-child(4) {
+  animation-delay: 0.9s;
+}
+.hero p {
+  animation-delay: 1.1s;
+}
+.hero button {
+  animation-delay: 1.3s;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  #video-bg {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  #video-bg {
+    width: auto;
+    height: 100%;
+  }
+}
+
+@keyframes fadeUp {
+  0% {
+    transform: translateY(80px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+  a:visited {
+      color:white;
+      text-decoration: none;
+  }
+
+  a {
+      text-decoration: none;
+  }
+
+  .button-new {
+      background-color:#468faa;
+  }
+
+  .new {
+      background-color: #407f99;
+  }

@@ -1,0 +1,70 @@
+<!-- // index.ejs / -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OnlySurf Login</title>
+
+
+<link rel="stylesheet/less" type="text/css" href="../css/style.less" />
+<script src="https://cdn.jsdelivr.net/npm/less@4.1.1"></script>
+
+<link rel="stylesheet" href="../css/main.css">
+
+<link rel="stylesheet" href="../css/login.css">
+
+</head>
+<body>
+
+	<div class="header-logo">
+        <a class="active logo" href="/">journ.ey</a>
+
+        </div>
+
+<div class="signup-form-wrapper">
+
+<div class="form-image">
+
+
+        </div>
+
+
+        <form class="signup-form" method = "POST" action="/">
+
+            <h1 class="title">welcome</h1>
+                <p>
+                    please log in our sign up below!<br>
+                    (log in as "test" to se pre-filled beach data)
+                </p>
+            
+            <div class=input-field>
+                <input class="input" input type = "text" id="userName" name="userName" placeholder="uername" value="test"/>
+            </div>
+            <br><br>
+    
+            <div class=input-field>
+                <!-- <label for = "password"> Password: </label> -->
+                <input class="input" type = "password" id = "password" name = "password" placeholder="password" value="test"/>
+            </div>
+            <br><br><br>
+    
+            <div class="action">
+                <input class="button" id="btn-log-in"type = "submit" value = "Login"/>
+                <button class="button" id="btn-sign-up"><a href = "/signup"> sign up</a></button>
+            </div>
+    
+            <!-- <button class="sign-up"><a href = "/signup"> Sign Up</a></button> -->
+    
+    
+        </form>
+
+    </div>
+
+</div>    
+
+
+</body>
+</html>

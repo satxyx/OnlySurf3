@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=Vidaloka&display=swap');
+
+@font-face {
+  font-family: 'berganteregular';
+  src: url('../fonts/bergante-webfont.woff2') format('woff2')
+}
+
+h1 {
+    font-family: 'berganteregular';
+}
+
+.icon {
+    width: 50px;
+}
+
+/* ------------------------------- */
+/* HEADER */
+/* ------------------------------- */
+.header {
+    padding: 0 30px;
+    z-index: 4;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: #121212; */
+    color: white;
+    font-family: 'berganteregular';
+  }
+  
+  .navList {
+    display: flex;
+  }
+  
+  .navLink {
+    right:0;
+    display: block;
+    padding: 20px;
+    color:white;
+  }
+  
+  .navLink:hover {
+    color: white;
+  }
+  
+  .navLink:visited {
+    color: white;
+  }
+  
+  .main-page {
+    display: flex;
+  }
+  
+  
+  .city-img {
+    width: 400px
+  }
+
+
+h1 {
+    font-family: 'berganteregular';
+}
+
+p {
+    padding-left: 15px;
+    padding-right: 15px;
+    font-family: "Roboto", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-size: 16px;
+    display: block;
+    font-weight: lighter;
+    }
+
+    h3 {
+        font-family: 'berganteregular';
+        font-size:16px;
+    }

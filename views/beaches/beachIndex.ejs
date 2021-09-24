@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>OnlySurf | Favorite Beaches</title>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="../slick/slick.css"/>
+
+    <link rel="stylesheet" href="../css/entryindex.css">
+
+
+    <link rel="stylesheet" type="text/css" href="../slick/slick-theme.css"/>
+
+
+    <script src="../JS/slickfile.js" defer></script>
+    
+    <link rel="stylesheet/less" type="text/css" href="../css/nav.less" />
+<script src="https://cdn.jsdelivr.net/npm/less@4.1.1" ></script>
+
+</head>
+<body>
+    <%- include('../../partials/navbar2.ejs') %>
+
+
+    <div class="container">
+        <div class="row">
+            <center><h1>your favorite beaches...</h1>
+
+            <div class="col-12">
+                <div class="slick">
+                    <% for (let i = 0; i < allBeach.length; i++) { %>
+                    <div class="item">
+                        <div class="bg" style="background-image:url(../css/photo-1505144808419-1957a94ca61e.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)">
+                            <a href="/beach/<%= allBeach[i]._id %>">
+                                <h1 class="entry-title"><%= allBeach[i].name %></h1>
+                            </a>
+                            <a href="/beach/<%= allBeach[i]._id %>">
+                                <p class="entry-content"><%= allBeach[i].content %></p>
+                            </a>
+
+                            <button class="edit-btn">
+                                <a href = "/beach/<%= allBeach[i]._id %>/edit"><img id="edit_icon" src="/img/draw2.png" height="40px"></a>
+                            </button>
+                            <br>
+                            <form class="trash-btn" action = "/beach/<%= allBeach[i]._id %>?_method=DELETE" method = "POST">
+                                <input type = "submit" value = "Delete Beach">
+                            </form>
+                        </div>
+
+                    </div>
+                    <% } %>
+                    
+                </div>
+            </div>
+            <button class="new" id="new" href="/beach/new"><a class="new" href="/beach/new">add a beach</a></button>
+
+        </div>
+    </div>
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="../slick/slick.min.js"></script>
+
+</body>
+</html>

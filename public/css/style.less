@@ -1,0 +1,505 @@
+@font-face {
+    font-family: 'berganteregular';
+    src: url('../fonts/bergante-webfont.woff2') format('woff2')
+  }
+  
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@200&300&400&family=Vidaloka&display=swap');
+
+
+html, body {
+    height: 100%;
+    color: #666666;
+    font-family: "Roboto", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
+  }
+
+
+  a {
+    display: inline-block;
+    list-style: none; 
+    text-decoration: none;
+    color: white;
+    transition: opacity .125s linear;
+    
+    &:hover {
+      opacity: 0.5;
+      cursor: pointer;
+      transition: opacity .125s linear;
+    }
+    
+    &:visited {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+  
+//   video {
+//     object-fit: cover;
+//     width: 100vw;
+//     height: 100vh;
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//   }
+
+  #bgvid {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    object-fit: cover;
+    width: 100%;
+    height: 100vh;
+    top:0;
+    left:0
+  }
+
+  .signup-form-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height:720px;
+    display: flex;
+    border: none;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
+    border-radius: 10px;
+    opacity:.9;
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0, 0, 0, 0.434) 100%);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(107, 52, 52, 0.8) 0%,rgba(0,0,0,.9) 80%);
+}
+
+.signup-form {
+    width: 60%;
+    background-color: white;
+    border-radius: 0px 10px 10px 0px;
+}
+
+.input-field {
+    padding-right: 40px;
+    padding-left: 20px;
+}
+
+.input {
+      font-size: 16px;
+      display: block;
+      font-family: 'Work Sans', sans-serif;
+      font-weight: lighter;
+      width: 100%;
+      padding: 10px;
+      border: 0;
+      border-bottom: 1px solid #747474;
+      outline: none;
+      transition: all .2s;
+      border-bottom-right-radius: 4px;
+      padding-right: 10px;
+} 
+     focus {
+        border-color: #222;
+      }
+
+      .button {
+        width: 100%;
+        border: none;
+        padding: 18px;
+        cursor: pointer;
+        text-transform: uppercase;
+        background: #e8e9ec;
+        color: #777;
+        border-bottom-right-radius: 0;
+        letter-spacing: 0.2px;
+        outline: 0;
+        transition: all .3s;
+        border-bottom-right-radius: 4px;
+        }
+  
+        #btn-sign-up {
+          background: #905e7b;
+          color: #FFEEEF;
+        }
+  
+
+        #map_canvas {
+            width: 100%;
+            height: 300px;
+        }
+        #current {
+            padding-top: 25px;
+        }
+
+  .nav-container {
+    height: 58px;
+    width: 100%;
+    position: fixed;
+    color: white;
+    //text-transform: uppercase;
+    letter-spacing: 0.025em;
+    transition: background-color 0.2s linear;
+    z-index: 4;
+
+    
+    &.solid-nav {
+      background-color: #aaa;
+      transition: background-color 0.2s linear;
+      z-index: 4;
+    }
+    
+    .nav-row {
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+      padding-right: 25px;
+      padding-left: 25px;
+      padding-top: 18px;
+      
+      .nav-logo {
+        display: inline-block;
+        font-weight: 900;
+        font-family: 'berganteregular';
+      }
+      
+      .nav-controls {
+        float: right;
+        color: #548a94;
+        
+        a {
+          padding-left: 20px;
+        }
+      }
+    }
+  }
+  
+  .container {
+    padding-top: 150px;
+    padding-bottom: 150px;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  
+  .row {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  @import "https://fonts.googleapis.com/css?family=Lato:300,400,900";
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1;
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+    background-color: #323236;
+    background-image: url(./beach_background04.png);
+background-size: 100vw;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+.grid-container {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  justify-content: center;
+}
+
+
+.grid-item {
+  width: 210px;
+  margin: 10px;
+  background-color: #ffffff;
+  overflow: hidden;
+  border-radius: 10px;
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0, 0, 0, 0.434) 100%);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(107, 52, 52, 0.8) 0%,rgba(0,0,0,.9) 80%);
+    display: inline-block;
+    vertical-align: middle;
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    transition-duration: 0.4s;
+    transition-property: transform;
+    opacity: .8;
+    box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
+    
+    }
+
+    .grid-item:hover,
+    .grid-item:focus,
+    .grid-item:active {
+        transform: scale(1.05);
+    }
+
+
+header {
+    padding-top: 100px;
+}
+header h1 {
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: #ffffff;
+  text-align: center;
+  letter-spacing: 0.1em;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  padding: 6.5em 1em;
+  display: block;
+  
+}
+.card:after {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 50%;
+}
+
+
+.card-night {
+//   background-color: #000;
+  background-image: url('../icons/swell.png');
+  background-repeat: no-repeat;
+  background-color: #548a94;
+  background-size: 200px;
+  
+}
+.card-rain {
+background-image: url('../icons/waves.png');
+  background-color: #83c1bc;
+  background-size: 200px;
+  background-repeat: no-repeat;
+}
+.card-snow {
+    background-image: url('../icons/temp.png');
+    background-color: #9dc8cf;
+  background-size: 200px;
+  background-repeat: no-repeat;
+}
+.card-storm {
+    background-image: url('../icons/watertemp2.png');
+  background-color: #d4d1d1;
+  background-size: 200px;
+  background-repeat: no-repeat;
+}
+.card-sunny {
+  background-color:#e5e5e5;
+  background-image: url('../icons/cloud.png');
+  background-size: 200px;
+  background-repeat: no-repeat;
+
+}
+
+.status {
+  color: #808080;
+  text-align: center;
+}
+.status p:first-child {
+  font-weight: 600;
+  color: #407f99;
+}
+
+.night {
+  background-image: url('../icons/waves.png');
+  color: #000;
+   height: 4px;
+  width: 4px;
+  opacity: 1;
+  position: absolute;
+  left: 90px;
+  top: 155px;
+}
+
+.rain {
+    display: block;
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  left: 40px;
+  top: 80px;
+}
+
+.snow {
+    display: block;
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  left: 40px;
+  top: 80px;
+}
+.storm {  
+    height: 50px;
+  width: 50px;
+  position: absolute;
+  left: 40px;
+  top: 80px;
+}
+.sunny {
+  content: "";
+  height: 90px;
+  width: 90px;
+  position: absolute;
+  left: 60px;
+  top: 60px;
+}
+  
+  p {
+    font-family: "Roboto", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-size: 16px;
+    display: block;
+    font-weight: lighter;
+}
+
+h1 {
+    font-family: 'berganteregular';
+    color: #407f99;
+}
+
+.icon {
+    width: 50px;
+}
+
+/* ------------------------------- */
+/* HEADER */
+/* ------------------------------- */
+.header {
+    padding: 0 30px;
+    z-index: 4;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: #121212; */
+    color: white;
+    font-family: 'berganteregular';
+  
+  }
+  
+  .navList {
+    display: flex;
+  }
+  
+  .navLink {
+    right:0;
+    display: block;
+    padding: 20px;
+    color:white;
+  }
+  
+  .navLink:hover {
+    color: white;
+  }
+  
+  .navLink:visited {
+    color: white;
+  }
+  
+  .main-page {
+    display: flex;
+  }
+  
+  
+  .city-img {
+    width: 400px
+  }
+
+
+h1 {
+    font-family: 'berganteregular';
+}
+
+p {
+    padding-left: 15px;
+    padding-right: 15px;
+    font-family: "Roboto", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-size: 16px;
+    display: block;
+    font-weight: lighter;
+    }
+
+    h3 {
+        font-family: 'berganteregular';
+        font-size:16px;
+        color:#407f99
+
+    }
+
+    .map-show  {
+            padding: 0;
+            margin: 0;
+            width:500px;
+            list-style: none;
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex-flow: row wrap;
+            justify-content: center;
+          
+    }
+
+    .map-details {
+
+        background-color: #8a8a8a;
+        overflow: hidden;
+        border-radius: 10px;
+        position: relative;
+        width: 100%;
+        padding: 6.5em 1em;
+        opacity: .8;
+        display: block;
+          mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0, 0, 0, 0.434) 100%);
+          -webkit-mask-image: linear-gradient(to bottom, rgba(107, 52, 52, 0.8) 0%,rgba(0,0,0,.9) 80%);
+    }
+
+    .button-new {
+        font-family: 'berganteregular';
+        color: white;
+        background: #407f99;
+        border: white;
+        border-radius: 10px;
+        padding: 10px;
+        letter-spacing: .5px; 
+        opacity: .5;
+        box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
+      }
+
+      .button-new:hover,
+      .button-new:focus,
+      .button-new:active {
+          transform: scale(1.05);
+      }
+
+      .date-divider {
+        font-family: 'berganteregular';
+        color: white;
+        background: #407f99;
+        border: white;
+        padding: 10px;
+        letter-spacing: .5px; 
+        opacity: .5;
+        box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
+      }

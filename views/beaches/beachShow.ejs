@@ -1,0 +1,182 @@
+<!-- here you should see a single journal entry -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>OnlySurf | Beach Info </title>
+</head>
+
+<link rel="stylesheet/less" type="text/css" href="../css/style.less" />
+<script src="https://cdn.jsdelivr.net/npm/less@4.1.1" ></script>
+<body>
+    <%- include('../../partials/navbar2.ejs') %>
+
+        <% const options1 = { year: 'numeric', month: 'long', day: 'numeric' } %>
+        <% const date1 = singleBeach.date %>
+        <% const dateTimeFormat3 = new Intl.DateTimeFormat('en-US', options1) %>
+
+        
+        <header>
+            <h1><%= singleBeach.name %></h1>
+            <center><p class="date-divider"><%= dateTimeFormat3.format(date1) %></p>
+
+
+          </header>
+<center>
+          <!-- <section class="map-show">
+            <div id='map_canvas' class="map-details"></div>
+        </section> -->
+          <ul class="grid-container">
+            <li class="grid-item" class=".hvr-grow">
+              <div class="card card-night">
+                <div class="night"></div>
+              </div>
+              <div class="status">
+                <p id= "swell">loading...</p>
+                <h3>swell height</h3>
+              </div>
+            </li>
+            <li class="grid-item">
+              <div class="card card-rain">
+                <div class="rain"></div>
+              </div>
+              <div class="status">
+                <p id="wave">loading...</p>
+                <h3>wave height</h3>
+              </div>
+            </li>
+            <li class="grid-item">
+              <div class="card card-snow">
+                <div class="snow"></div>
+              </div>
+              <div class="status">
+                <p id="airTemp">loading...</p>
+                <h3>temperatue</h3>
+              </div>
+            </li>
+            <li class="grid-item">
+              <div class="card card-storm">
+                <div class="storm"></div>
+              </div>
+              <div class="status">
+                <p id="waterTemp">loading...</p>
+                <h3>water temperatue</h3>
+              </div>
+            </li>
+            <li class="grid-item">
+              <div class="card card-sunny">
+                <div class="sunny"></div>
+              </div>
+              <div class="status">
+                <p id ="cloud">loading...</p>
+                <h3>cloud cover</h3>
+              </div>
+            </li>
+          </ul>
+
+          <button class="button-new" id="new" href="/beach/new"><a class="new" href="/beach/new">new beach</a></button>
+
+
+        <!-- <div class="weather">
+            <p id="wave"></p><img class="icon" src="/icons/waves.png"> 
+            <p id="swell"></p><img class="icon" src="/icons/swell.png">
+            <p id="airTemp"></p><img class="icon" src="/icons/temp.png">
+            <p id="waterTemp"></p><img class="icon" src="/icons/watertemp2.png">
+            <p id="wind"></p><img class="icon" src="/icons/wind.png">
+            <p id="cloud"></p><img class="icon" src="/icons/cloud.png">
+        </div> --> 
+<!-- 
+        <h1>Name: <%= singleBeach.name %> </h1>
+        <h1>Lat: <%= singleBeach.lat %> </h1>
+        <h1>Lang: <%= singleBeach.lang %> </h1>
+        <h1>Location: <%= singleBeach.location %> </h1>
+        <h3><%= dateTimeFormat3.format(date1) %></h3>
+
+    <section>
+        <div class = "content">
+            <p class = "words">Content: <%- singleBeach.content %></p>
+            <div class = "button">
+                <button>
+                    <a href = "/beach/<%= singleBeach._id %>/edit">Update Beach</a>
+                </button>
+            </div>
+        </div>
+        
+        <!-- <form class="trash-btn" action = "/beach/<%= singleBeach._id %>?_method=DELETE" method = "POST">
+            <input class="trash-btn" type = image src="/icons/cloud.png">
+        </form> -->
+
+        <!-- <form class="trash-btn" action = "/beach/<%= singleBeach._id %>?_method=DELETE" method = "POST">
+            <input class="trash-btn" type = image src="/icons/cloud.png">
+        </form> -->
+
+        <script>
+
+            const lat = '<%- singleBeach.lat %>'
+            const lng = '<%- singleBeach.lang %>'
+            const params = 'waveHeight,airTemperature,swellHeight,waterTemperature,waveHeight,windSpeed,cloudCover';
+            
+            fetch(`https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${params}`, {
+            headers: {
+                'Authorization': '81a333ae-1802-11ec-93db-0242ac130002-81a33426-1802-11ec-93db-0242ac130002'
+            }
+            })
+            .then((response) => response.json())
+            .then((jsonData) => {
+                 console.log(jsonData)
+                const wave = jsonData.hours[0].waveHeight.sg
+                const swell = jsonData.hours[0].swellHeight.sg
+                const airTemp = jsonData.hours[0].airTemperature.sg
+                const waterTemp = jsonData.hours[0].waterTemperature.sg
+                const wind = jsonData.hours[0].windSpeed.sg
+                const cloud = jsonData.hours[0].cloudCover.sg
+
+                // console.log(wave)
+                document.getElementById("wave").innerHTML =  wave + 'ft';
+                document.getElementById("swell").innerHTML = swell + 'ft';
+                document.getElementById("airTemp").innerHTML = airTemp + ' C';
+                document.getElementById("waterTemp").innerHTML = waterTemp + ' C';
+                // document.getElementById("wind").innerHTML = "wind speed: " + wind + 'mph';
+                document.getElementById("cloud").innerHTML = cloud + '%';
+            });
+        </script>
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCasBjJh8EgI1ZIGdpZNS7888WvM8DVcdo"></script>
+<script>
+
+            const latSec = '<%- singleBeach.lat %>'
+            const lngSec = '<%- singleBeach.lang %>'
+
+
+
+    var map = new google.maps.Map(document.getElementById('map_canvas'), {
+        zoom: 10,
+        center: new google.maps.LatLng(latSec, lngSec),
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+        
+    });
+    
+    var myMarker = new google.maps.Marker({
+        position: new google.maps.LatLng(latSec, lngSec),
+        draggable: true
+    });
+    
+    google.maps.event.addListener(myMarker, 'dragend', function (evt) {
+        // document.getElementById('current').innerHTML = 'Lat: ' + evt.latLng.lat().toFixed(3) + ' Lng: ' + evt.latLng.lng().toFixed(3) + '</p>';
+        document.getElementById("mytext").value = evt.latLng.lng().toFixed(3);
+        document.getElementById("mytextagain").value = evt.latLng.lat().toFixed(3);
+
+    });
+    
+    google.maps.event.addListener(myMarker, 'dragstart', function (evt) {
+        document.getElementById('current').innerHTML = '<p>Currently dragging marker...</p>';
+    });
+    
+    map.setCenter(myMarker.position);
+    myMarker.setMap(map);
+</script>
+
+</body>
+</html>

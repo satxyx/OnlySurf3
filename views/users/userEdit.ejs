@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OnlySurf</title>
+
+    <!-- NOT SHOWING ON LIFE SITE -->
+
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/profileedit2.css">
+</head>
+<body>
+    <%- include('../../partials/navbar.ejs') %>
+
+    <div class="signup-form-wrapper">
+
+        <div class="form-image">
+
+            </div>
+
+    <form class="signup-form" method="POST" action="/user/<%= singleUser._id %>?_method=PUT">
+        
+        <h1 class="title">need a change? </h1>
+            <p>
+                edit your profile below!
+            </p>
+
+            <div class = "input-field">
+                <img class="avatar-image" src="<%= singleUser.avatarImage %>" alt = "Avatar Image">
+            </div>
+        
+        <div class=input-field>
+            <input class="input"  type = "text" id="userName" name="userName" value = "<%= singleUser.userName %>" placeholder="username: <%= singleUser.userName %>"/>
+        </div>
+        <br><br>
+
+        <div class=input-field>
+            <!-- <label for = "password"> Password: </label> -->
+            <input class="input" type = "text" id = "firstName" name = "firstName" value = "<%= singleUser.firstName %>"/>
+        </div>
+        <br><br>
+        <div class=input-field>
+            <!-- <label for = "password"> Password: </label> -->
+            <input class="input" type = "text" id = "lastname" name = "lastName" value = "<%= singleUser.lastName %>"/>
+        </div>
+        <br><br>
+        <div class=input-field>
+            <!-- <label for = "password"> Password: </label> -->
+            <input class="input" type = "text" id = "password" name = "password" value = "<%= singleUser.password %>"/>
+        </div>
+        <br><br>
+        <div class=input-field>
+            <!-- <label for = "password"> Password: </label> -->
+            <input class="input" type = "text" id = "avatar" name = "avatarImage" value = "<%= singleUser.avatarImage %>"/>
+        </div>
+        <br>
+
+        <div class="action">
+            <input class="button" class="a-button" type = "submit" id=btn-sign-up value="Save Changes"/>
+        </div>
+
+        <!-- <button class="sign-up"><a href = "/signup"> Sign Up</a></button> -->
+</form>
+</body>
+</html>
