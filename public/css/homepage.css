@@ -21,20 +21,12 @@ body {
   --blue: #407f99;
 }
 
-p {
-    color:white;
-    font-family: "Roboto", sans-serif;
-font-weight:lighter;
-font-size:14px;
--webkit-font-smoothing: antialiased;
-
-}
 
 h1 {
   color:white;
   font-family: "berganteregular";
   color: var(--primary);
-  font-weight:lighter;
+  /* font-weight:lighter; */
   -webkit-font-smoothing: antialiased;
 }
 
@@ -66,14 +58,20 @@ ul {
   font-size: 5rem;
 }
 .hero p {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   margin: 2em 0 2em 0;
-  line-height: 30px;
+  line-height: 25px;
+  color:white;
+  font-family: "Roboto";
+font-weight:lighter;
+font: size 10px;
+-webkit-font-smoothing: antialiased;
+
 }
 
 .hero button {
   padding: 1em 1.2em;
-  background-color: #407f99;
+  background-color: #5eac9e;
   font-family: 'Raleway';
   font-size: 0.8rem;
   font-weight: light;
@@ -86,8 +84,8 @@ ul {
 
 }
 .hero button:hover {
-  background-color: #407f99;
-  border: 2px solid #407f99;
+  background-color: #5eac9e;
+  border: 2px solid #5eac9e;
 }
 
 .hero h1:nth-child(2) {
@@ -141,9 +139,10 @@ ul {
   }
 
   .button-new {
-      background-color:#468faa;
+      background-color:#5eac9e;
   }
 
   .new {
-      background-color: #407f99;
+      background-color: #5eac9e;
   }
+
