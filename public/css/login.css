@@ -65,33 +65,53 @@
       .signup-form-wrapper {
         position: absolute;
         top: 50%;
-        left: 60%;
+        left: 50%;
         transform: translate(-50%, -50%);
         width: 600px;
         height:335px;
         display: flex;
-        border: none;
         text-align: center;
         box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
-        border-radius: 10px;
+        /* border-radius: 10px; */
         opacity:.9;
+        justify-content: center;
         mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0, 0, 0, 0.434) 100%);
         -webkit-mask-image: linear-gradient(to bottom, rgba(107, 52, 52, 0.8) 0%,rgba(0,0,0,.9) 80%);
+    }
+
+
+/*  MEDIA QUERY, CELL */
+    @media (max-width: 480px) {
+      .signup-form-wrapper {
+        width: 100vw;
+        height: 350px;
+        justify-content: center;
+        top:50%;
+        left:50%;
+      }
+    }
+      @media (max-width: 480px) {
+      .signup-form-wrapper2 {
+        width: 100vw;
+        justify-content: center;
+        top:50%;
+        left:50%;
+      } 
     }
 
     .signup-form-wrapper2 {
       position: absolute;
       top: 50%;
-      left: 60%;
+      left: 50%;
       transform: translate(-50%, -50%);
       width: 600px;
       height:432px;
       display: flex;
-      border: none;
       text-align: center;
       box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
-      border-radius: 10px;
+      
       opacity:.9;
+      justify-content: center;
       mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0, 0, 0, 0.434) 100%);
       -webkit-mask-image: linear-gradient(to bottom, rgba(107, 52, 52, 0.8) 0%,rgba(0,0,0,.9) 80%);
   }
