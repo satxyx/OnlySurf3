@@ -49,9 +49,10 @@
               <div class="info">
                <h1><%= singleBeach.name %></h1><br>
                <p> <%= singleBeach.content %></p>
+               <p>lat: <%= singleBeach.lat %> lng: <%= singleBeach.lang %> </p>
 
-               <a class="new" href="/beach/new">
-                <button class="button" id="btn-beach" href="/beach/new">edit beach content</button></a>
+               <a class="new" href="/beach/<%= singleBeach._id %>/edit">
+                <button class="button" id="btn-beach">edit beach content</button></a>
 
               </div>
               
@@ -110,7 +111,10 @@
           </ul>
 
           <a class="new" href="/beach/new">
-            <button class="button" id="btn-beach" href="/beach/new">edit beach</button></a>
+            <button class="button" id="btn-beach2">new beach</button></a>
+            <a class="new" href="/beach">
+              <button class="button" id="btn-beach2">all beaches</button></a>
+  
 
         <!-- <div class="weather">
             <p id="wave"></p><img class="icon" src="/icons/waves.png"> 
@@ -167,8 +171,8 @@
                 const cloud = jsonData.hours[0].cloudCover.sg
 
                 // console.log(wave)
-                document.getElementById("wave").innerHTML =  wave + 'ft';
-                document.getElementById("swell").innerHTML = swell + 'ft';
+                document.getElementById("wave").innerHTML =  wave + ' ft';
+                document.getElementById("swell").innerHTML = swell + ' ft';
                 document.getElementById("airTemp").innerHTML = airTemp + ' C';
                 document.getElementById("waterTemp").innerHTML = waterTemp + ' C';
                 // document.getElementById("wind").innerHTML = "wind speed: " + wind + 'mph';
