@@ -18,7 +18,7 @@ body {
   display: grid;
   place-items: center;
   --primary: white;
-  --blue: #407f99;
+  --blue: white;
 }
 
 
