@@ -1,3 +1,4 @@
+
 <!-- here you should see a single journal entry -->
 <!DOCTYPE html>
 <html lang="en">
@@ -152,13 +153,16 @@
 
         <script>
 
+            const apiKey = '81a333ae-1802-11ec-93db-0242ac130002-81a33426-1802-11ec-93db-0242ac130002'
+
             const lat = '<%- singleBeach.lat %>'
             const lng = '<%- singleBeach.lang %>'
             const params = 'waveHeight,airTemperature,swellHeight,waterTemperature,waveHeight,windSpeed,cloudCover';
             
             fetch(`https://api.stormglass.io/v2/weather/point?lat=${lat}&lng=${lng}&params=${params}`, {
             headers: {
-                'Authorization': '81a333ae-1802-11ec-93db-0242ac130002-81a33426-1802-11ec-93db-0242ac130002'
+                // 'Authorization': '81a333ae-1802-11ec-93db-0242ac130002-81a33426-1802-11ec-93db-0242ac130002'
+                'Authorization': apiKey
             }
             })
             .then((response) => response.json())
