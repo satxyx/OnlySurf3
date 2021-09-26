@@ -7,7 +7,6 @@
     <title>OnlySurf | Favorite Beaches</title>
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
     <link rel="stylesheet" type="text/css" href="../slick/slick.css"/>
 
@@ -26,7 +25,7 @@
 <body>
     <%- include('../../partials/navbar2.ejs') %>
 
-
+<br><br><br><br><br>
     <div class="container">
         <div class="row">
             <center><h1>your favorite beaches...</h1>
@@ -57,7 +56,9 @@
                     
                 </div>
             </div>
-            <button class="new" id="new" href="/beach/new"><a class="new" href="/beach/new">add a beach</a></button>
+            <!-- <button class="new" id="new" href="/beach/new"><a class="new" href="/beach/new">add a beach</a></button> -->
+            <a class="new" href="/beach/new">
+                <button class="button" id="btn-beach" href="/beach/new">add a beach</button></a>
 
         </div>
     </div>

@@ -10,7 +10,13 @@
 
 <link rel="stylesheet/less" type="text/css" href="../css/style.less" />
 <script src="https://cdn.jsdelivr.net/npm/less@4.1.1" ></script>
+
+<link rel="stylesheet/less" type="text/css" href="../css/nav.less" />
+<script src="https://cdn.jsdelivr.net/npm/less@4.1.1" ></script>
+
+<link rel="stylesheet" href="../css/button.css">
 <body>
+
     <%- include('../../partials/navbar2.ejs') %>
 
         <% const options1 = { year: 'numeric', month: 'long', day: 'numeric' } %>
@@ -19,15 +25,42 @@
 
         
         <header>
-            <h1><%= singleBeach.name %></h1>
+            <h1>Current Surf Conditions <%= singleBeach.name %></h1>
             <center><p class="date-divider"><%= dateTimeFormat3.format(date1) %></p>
+              
 
 
           </header>
 <center>
-          <!-- <section class="map-show">
-            <div id='map_canvas' class="map-details"></div>
-        </section> -->
+
+
+  
+  
+  <div class="grid-container2">
+    
+    <div class="grid-child purple">
+            <section class="map-show">
+             <div id='map_canvas' class="map-details"></div>
+          </section> 
+          </div>
+      
+          <div class="grid-child green">
+            <section class="info">
+              <div class="info">
+               <h1><%= singleBeach.name %></h1><br>
+               <p> <%= singleBeach.content %></p>
+
+               <a class="new" href="/beach/new">
+                <button class="button" id="btn-beach" href="/beach/new">edit beach content</button></a>
+
+              </div>
+              
+           </section> 
+          </div>
+        
+      </div>
+
+
           <ul class="grid-container">
             <li class="grid-item" class=".hvr-grow">
               <div class="card card-night">
@@ -76,8 +109,8 @@
             </li>
           </ul>
 
-          <button class="button-new" id="new" href="/beach/new"><a class="new" href="/beach/new">new beach</a></button>
-
+          <a class="new" href="/beach/new">
+            <button class="button" id="btn-beach" href="/beach/new">edit beach</button></a>
 
         <!-- <div class="weather">
             <p id="wave"></p><img class="icon" src="/icons/waves.png"> 

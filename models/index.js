@@ -11,7 +11,7 @@ mongoose.connect(connectionString, {
   });
 
   mongoose.connection.on('connected', () => {
-    console.log(`Mongoose connected `);
+    console.log(`Mongoose connected to ${connectionString}`);
   });
 
   module.exports = {
