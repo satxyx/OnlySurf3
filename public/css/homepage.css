@@ -136,6 +136,8 @@ font: size 10px;
 
   a {
       text-decoration: none;
+      color:white;
+
   }
 
   .button-new {
@@ -146,3 +148,7 @@ font: size 10px;
       background-color: #5eac9e;
   }
 
+  a:visited {
+	  color: white;
+    text-decoration: none;
+  }
