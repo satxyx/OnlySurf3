@@ -52,7 +52,7 @@
                <p>lat: <%= singleBeach.lat %> lng: <%= singleBeach.lang %> </p>
 
                <a class="new" href="/beach/<%= singleBeach._id %>/edit">
-                <button class="button" id="btn-beach">edit beach content</button></a>
+                <button class="button" id="btn-beach">edit beach </button></a>
 
               </div>
               
@@ -114,6 +114,10 @@
             <button class="button" id="btn-beach2">new beach</button></a>
             <a class="new" href="/beach">
               <button class="button" id="btn-beach2">all beaches</button></a>
+              
+              <form class="trash-btn" action = "/beach/<%= singleBeach._id %>?_method=DELETE" method = "POST">
+                <input class="trash-btn" type = image src="/img/trash.png">
+            </form>
   
 
         <!-- <div class="weather">
@@ -145,9 +149,6 @@
             <input class="trash-btn" type = image src="/icons/cloud.png">
         </form> -->
 
-        <!-- <form class="trash-btn" action = "/beach/<%= singleBeach._id %>?_method=DELETE" method = "POST">
-            <input class="trash-btn" type = image src="/icons/cloud.png">
-        </form> -->
 
         <script>
 
