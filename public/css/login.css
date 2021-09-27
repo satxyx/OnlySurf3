@@ -81,7 +81,7 @@
     @media (max-width: 480px) {
       .signup-form-wrapper {
         width: 100vw;
-        height: 350px;
+        height: 500px;
         justify-content: center;
         top:50%;
         left:50%;
@@ -90,6 +90,7 @@
       @media (max-width: 480px) {
       .signup-form-wrapper2 {
         width: 100vw;
+        height: 500px;
         justify-content: center;
         top:50%;
         left:50%;
