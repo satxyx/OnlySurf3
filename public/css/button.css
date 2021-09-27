@@ -45,3 +45,12 @@ button:active {
       font-weight: lighter;
       text-decoration: normal;
     }
+
+
+    #btn-beach2 {
+        background: #ecece8;
+        color: #548a94;
+        opacity: .8;
+    
+        /* border-radius: 0px 0px 10px 10px; */
+      }

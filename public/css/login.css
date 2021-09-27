@@ -40,19 +40,16 @@
 
       }
 
-      a:active, a:hover, a:visited {
-        color: #548a94;
-        font-weight: lighter;
-        text-decoration: normal;
-
-
+      #btn-sign-up:hover {
+        background: white;
+        color:#548a94;
       }
 
-      a {
-        font-weight: lighter;
-        text-decoration: normal;
-        color: #C489B9;
+      #btn-log-in:hover {
+        background: white;
+        color:#548a94;
       }
+
 
       p {
         padding-left: 18px;
@@ -122,34 +119,3 @@
     letter-spacing: 0;
 }
 
-.button:hover,
-.button:active {
-  letter-spacing: 5px;
-}
-
-.button:after,
-.button:before {
-  backface-visibility: hidden;
-  border: 1px solid rgba(#fff, 0);
-  bottom: 0px;
-  content: " ";
-  display: block;
-  margin: 0 auto;
-  position: relative;
-  transition: all 280ms ease-in-out;
-  width: 0;
-}
-
-.button:hover:after,
-.button:hover:before {
-  backface-visibility: hidden;
-  border-color: #fff;
-  transition: width 350ms ease-in-out;
-  width: 70%;
-}
-
-.button:hover:before {
-  bottom: auto;
-  top: 0;
-  width: 70%;
-}
